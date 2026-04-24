@@ -687,6 +687,13 @@ class Github:
         :param sort: string ('stars', 'forks', 'updated')
         :param order: string ('asc', 'desc')
         :param qualifiers: keyword dict query qualifiers
+        :rtype: :class:`PaginatedList` of :class:`github.Repository.RepositorySearchResult`
+
+        You can check if GitHub search returned `incomplete results <https://docs.github.com/en/rest/search/search?apiVersion=2022-11-28#timeouts-and-incomplete-results>`_::
+
+            results = gh.search_repositories("query")
+            if results.incomplete_results:
+                print(f"Not sure if {results.totalCount} results are actually all results")
         """
         assert isinstance(query, str), query
         url_parameters = dict()
@@ -728,6 +735,12 @@ class Github:
         :param order: string ('asc', 'desc')
         :param qualifiers: keyword dict query qualifiers
         :rtype: :class:`PaginatedList` of :class:`github.NamedUser.NamedUserSearchResult`
+
+        You can check if GitHub search returned `incomplete results <https://docs.github.com/en/rest/search/search?apiVersion=2022-11-28#timeouts-and-incomplete-results>`_::
+
+            results = gh.search_users("query")
+            if results.incomplete_results:
+                print(f"Not sure if {results.totalCount} results are actually all results")
         """
         assert isinstance(query, str), query
         url_parameters = dict()
@@ -769,6 +782,12 @@ class Github:
         :param order: string ('asc', 'desc')
         :param qualifiers: keyword dict query qualifiers
         :rtype: :class:`PaginatedList` of :class:`github.Issue.IssueSearchResult`
+
+        You can check if GitHub search returned `incomplete results <https://docs.github.com/en/rest/search/search?apiVersion=2022-11-28#timeouts-and-incomplete-results>`_::
+
+            results = gh.search_issues("query")
+            if results.incomplete_results:
+                print(f"Not sure if {results.totalCount} results are actually all results")
         """
         assert isinstance(query, str), query
         url_parameters = dict()
@@ -807,6 +826,12 @@ class Github:
         :param highlight: boolean (True, False)
         :param qualifiers: keyword dict query qualifiers
         :rtype: :class:`PaginatedList` of :class:`github.ContentFile.ContentFileSearchResult`
+
+        You can check if GitHub search returned `incomplete results <https://docs.github.com/en/rest/search/search?apiVersion=2022-11-28#timeouts-and-incomplete-results>`_::
+
+            results = gh.search_code("query")
+            if results.incomplete_results:
+                print(f"Not sure if {results.totalCount} results are actually all results")
         """
         assert isinstance(query, str), query
         url_parameters = dict()
@@ -851,6 +876,12 @@ class Github:
         :param order: string ('asc', 'desc')
         :param qualifiers: keyword dict query qualifiers
         :rtype: :class:`PaginatedList` of :class:`github.Commit.CommitSearchResult`
+
+        You can check if GitHub search returned `incomplete results <https://docs.github.com/en/rest/search/search?apiVersion=2022-11-28#timeouts-and-incomplete-results>`_::
+
+            results = gh.search_commits("query")
+            if results.incomplete_results:
+                print(f"Not sure if {results.totalCount} results are actually all results")
         """
         assert isinstance(query, str), query
         url_parameters = dict()
@@ -885,6 +916,12 @@ class Github:
         :param query: string
         :param qualifiers: keyword dict query qualifiers
         :rtype: :class:`PaginatedList` of :class:`github.Topic.Topic`
+
+        You can check if GitHub search returned `incomplete results <https://docs.github.com/en/rest/search/search?apiVersion=2022-11-28#timeouts-and-incomplete-results>`_::
+
+            results = gh.search_topics("query")
+            if results.incomplete_results:
+                print(f"Not sure if {results.totalCount} results are actually all results")
         """
         assert isinstance(query, str), query
         url_parameters = dict()
